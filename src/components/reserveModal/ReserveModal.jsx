@@ -16,7 +16,6 @@ const ReserveModal = ({ setModal, hotelId }) => {
 
 
     const dates = useSelector(state=> state.search.date)
-    console.log(dates);
 
     // const getDatesRange = async (startDate, endDate) => {
     //     const start = new Date(startDate)
