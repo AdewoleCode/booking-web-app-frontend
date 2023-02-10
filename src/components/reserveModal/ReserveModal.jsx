@@ -12,7 +12,7 @@ const ReserveModal = ({ setModal, hotelId }) => {
     const [loading, setLoading] = useState(false)
     const [selectedRooms, setSelectedRooms] = useState([])
 
-    const getHotelsRoomRoute = `http://localhost:8000/api/hotels/room/${hotelId}`
+    const getHotelsRoomRoute = `https://hotel-booking-api-u646.onrender.com/api/hotels/room/${hotelId}`
 
 
     const dates = useSelector(state=> state.search.date)

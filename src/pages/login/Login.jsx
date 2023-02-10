@@ -29,7 +29,7 @@ const Login = () => {
             dispatch(AuthActions.loginStart)
             try {
                 setLoading(true)
-                const res = await axios.post("http://localhost:8000/api/auth/login", credentials);
+                const res = await axios.post("https://hotel-booking-api-u646.onrender.com/api/auth/login", credentials);
                 console.log(res.data);
                 dispatch(AuthActions.loginSuccess(res.data.userDetails));
                 localStorage.setItem('user', JSON.stringify(res.data.userDetails))

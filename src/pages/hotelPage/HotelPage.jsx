@@ -28,7 +28,7 @@ const HotelList = () => {
 
 
     useEffect(() => {
-        fetchData(`http://localhost:8000/api/hotels/find/`)
+        fetchData(`https://hotel-booking-api-u646.onrender.com/api/hotels/find/`)
     }, [])
     
     
