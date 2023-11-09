@@ -6,6 +6,7 @@ import { DateRange } from "react-date-range";
 import SearchItem from "../../components/searchItem/SearchItem"
 import { useEffect } from "react";
 import axios from "axios";
+import Spinner from "../../components/spinner/Spinner";
 
 
 const HotelList = () => {
@@ -22,7 +23,7 @@ const HotelList = () => {
 
 
   useEffect(() => {
-    fetchData(`https://hotel-booking-api-u646.onrender.com/api/hotels/find/?city=${destination}`)
+    fetchData(`http://localhost:8000/api/hotels/find/?city=${destination}`)
   }, [])
 
   const fetchData = async (url) => {
@@ -34,7 +35,7 @@ const HotelList = () => {
     })
   }
 
-  const refetchUrl = `https://hotel-booking-api-u646.onrender.com/api/hotels/find/?city=${destination}&min=${minPrice || 1}&max=${maxPrice || 999}`
+  const refetchUrl = `http://localhost:8000/api/hotels/find/?city=${destination}&min=${minPrice || 1}&max=${maxPrice || 999}`
 
   useEffect(() => {
     refetchData()
@@ -132,7 +133,7 @@ const HotelList = () => {
           </div>
           <div className="listResult">
             {loading ? (
-              "loading please wait..."
+              <Spinner />
             ) : (
               <>
                 {

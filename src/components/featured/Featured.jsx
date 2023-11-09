@@ -2,6 +2,7 @@ import "./Featured.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { countByCityRoute } from "../../apiRoutes/routes";
+import Spinner from "../spinner/Spinner"
 
 
 const Featured = () => {
@@ -26,7 +27,7 @@ const Featured = () => {
     <div className="featured">
       {
         loading ? (
-          "loading please wait"
+          <Spinner />
         ) :
           <>
             <div className="featuredItem">

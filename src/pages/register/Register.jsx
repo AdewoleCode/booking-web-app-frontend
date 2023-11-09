@@ -83,7 +83,7 @@ const Register = () => {
                 />
               
                 <button disabled={loading} onClick={handleClick} className="lButton">
-                    Login
+                    Register
                 </button>
                 {error && <span>{errorMsg}</span>}
                 <div className="already-btn">Already have an account? <Link style={{ textDecoration: "underline", color: "green" }} to="/login">Login</Link></div>

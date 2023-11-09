@@ -2,6 +2,7 @@ import "./FeaturedList.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { getHotelsFeatured } from "../../apiRoutes/routes";
+import Spinner from "../spinner/Spinner";
 
 
 const FeaturedList = () => {
@@ -36,7 +37,7 @@ const FeaturedList = () => {
       <div className="fp">
         {
           loading ? (
-            "loading please wait..."
+            <Spinner />
           ) : (
             <>
               {

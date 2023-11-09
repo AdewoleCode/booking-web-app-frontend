@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { SearchActions } from "../../redux/slices/SearchSlice";
-
+import Spinner from "../../components/spinner/Spinner";
 
 const HotelList = () => {
     const dispatch = useDispatch()
@@ -28,10 +28,10 @@ const HotelList = () => {
 
 
     useEffect(() => {
-        fetchData(`https://hotel-booking-api-u646.onrender.com/api/hotels/find/`)
+        fetchData(`http://localhost:8000/api/hotels/find/`)
     }, [])
-    
-    
+
+
 
     const fetchData = async (url) => {
         setLoading(true)
@@ -48,7 +48,7 @@ const HotelList = () => {
             date,
             options
         }))
-    }    
+    }
 
 
     return (
@@ -82,7 +82,7 @@ const HotelList = () => {
                                         type="number"
                                         min={1}
                                         className="lsOptionInput"
-                                    placeholder={options.adult}
+                                        placeholder={options.adult}
                                     />
                                 </div>
                                 <div className="lsOptionItem">
@@ -91,7 +91,7 @@ const HotelList = () => {
                                         type="number"
                                         min={0}
                                         className="lsOptionInput"
-                                    placeholder={options.children}
+                                        placeholder={options.children}
                                     />
                                 </div>
                                 <div className="lsOptionItem">
@@ -100,7 +100,7 @@ const HotelList = () => {
                                         type="number"
                                         min={1}
                                         className="lsOptionInput"
-                                    placeholder={options.room}
+                                        placeholder={options.room}
                                     />
                                 </div>
                             </div>
@@ -108,7 +108,9 @@ const HotelList = () => {
                     </div>
                     <div className="listResult">
                         {loading ? (
-                            "loading please wait..."
+                            <div>
+                                <Spinner />
+                            </div>
                         ) : (
                             <>
                                 {

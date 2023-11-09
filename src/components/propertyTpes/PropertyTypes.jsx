@@ -2,6 +2,7 @@ import "./PropertyTypes.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { countByPropertyRoute } from "../../apiRoutes/routes";
+import Spinner from "../spinner/Spinner";
 
 
 const PropertyTypes = () => {
@@ -39,7 +40,7 @@ const PropertyTypes = () => {
             <div className="pList">
                 {
                     loading ? (
-                        "loading please wait..."
+                        <Spinner />
                     ) :
                         (
                             <>
