@@ -28,7 +28,7 @@ const Hotel = () => {
 
   const id = location.pathname.split("/")[2]
 
-  const getSingleRouteUrl = `http://localhost:8000/api/hotels/find/${id}`
+  const getSingleRouteUrl = `https://hotel-booking-api-u646.onrender.com/api/hotels/find/${id}`
 
   const date = useSelector(state => state.search.date)
   const options = useSelector(state => state.search.options)

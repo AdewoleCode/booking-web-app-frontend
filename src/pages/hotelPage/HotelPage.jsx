@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { SearchActions } from "../../redux/slices/SearchSlice";
+import { allHotels } from "../../apiRoutes/routes";
 import Spinner from "../../components/spinner/Spinner";
 
 const HotelList = () => {
@@ -28,7 +29,7 @@ const HotelList = () => {
 
 
     useEffect(() => {
-        fetchData(`http://localhost:8000/api/hotels/find/`)
+        fetchData(allHotels)
     }, [])
 
 

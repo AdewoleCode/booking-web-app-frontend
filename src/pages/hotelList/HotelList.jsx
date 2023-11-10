@@ -23,7 +23,7 @@ const HotelList = () => {
 
 
   useEffect(() => {
-    fetchData(`http://localhost:8000/api/hotels/find/?city=${destination}`)
+    fetchData(`https://hotel-booking-api-u646.onrender.com/api/hotels/find/?city=${destination}`)
   }, [])
 
   const fetchData = async (url) => {
@@ -35,7 +35,7 @@ const HotelList = () => {
     })
   }
 
-  const refetchUrl = `http://localhost:8000/api/hotels/find/?city=${destination}&min=${minPrice || 1}&max=${maxPrice || 999}`
+  const refetchUrl = `https://hotel-booking-api-u646.onrender.com/api/hotels/find/?city=${destination}&min=${minPrice || 1}&max=${maxPrice || 999}`
 
   useEffect(() => {
     refetchData()
